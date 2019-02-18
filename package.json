@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "server": "node server.js"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^1.0.1",
+    "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
+    "tapable": "^1.1.1",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-middleware": "^3.5.2",
+    "webpack-hot-middleware": "^2.24.3"
+  }
+}

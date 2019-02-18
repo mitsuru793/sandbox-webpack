@@ -1,0 +1,24 @@
+const express = require('express')
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+
+console.log(webpack.CleanWebpackPlugin)
+
+const app = express()
+const config = require('./webpack.config.js')
+const compiler = webpack(config)
+
+let middle = webpackDevMiddleware(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath,
+})
+// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// configuration file as a base.
+app.use(middle)
+
+app.use(require('webpack-hot-middleware')(compiler))
+
+// Serve the files on port 3000.
+app.listen(3000, function() {
+  console.log('E!xample app listening on port 3000!\n')
+})
